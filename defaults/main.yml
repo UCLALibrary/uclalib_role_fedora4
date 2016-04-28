@@ -1,0 +1,20 @@
+---
+
+# Define version of Fedora to use
+fedora_version: 4.5.0
+
+# Define the URL to obtain the Fedora WAR file
+fedora_url: "https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-{{ fedora_version }}/fcrepo-webapp-{{ fedora_version }}.war"
+
+# Define location of Solr Tomcat installation directory
+fedora_base: /usr/local/fedora
+
+# Define location of Fedora home directory
+fedora_home: /opt/fedora
+
+# Define fedora tomcat container java options
+fedora_javaopts: "-Xms1024m -Xmx1024m -XX:NewSize=256m -XX:MaxNewSize=256m -XX:PermSize=256m -XX:MaxPermSize=256m -XX:+DisableExplicitGC -Dfcrepo.home={{ fedora_home }}/data -Dfcrepo.modeshape.configuration=file://{{ fedora_home }}/etc/modeshape.json"
+
+fedora_admin_user: fedoraAdmin
+
+fedora_admin_password: nimdAarodef!
