@@ -1,0 +1,28 @@
+---
+
+- name: Create the Fedora Home directory
+  file: path={{ fedora_home }} owner=fedora group=fedora state=directory
+
+- name: Create the Fedora etc directory
+  file: path={{ fedora_home }}/etc owner=fedora group=fedora state=directory
+
+- name: Createh Fedora data directory
+  file: path={{ fedora_home }}/data owner=fedora group=fedora state=directory
+
+- name: Put in place the Fedora WAR file in the webapps directory
+  get_url: url={{ fedora_url }} dest={{ fedora_base }}/webapps/fcrepo.war force=no
+
+- name: Set correct ownership of the Fedora WAR file
+  file: path={{ fedora_base }}/webapps/fcrepo.war owner=fedora group=fedora state=file
+
+- name: Put in place the Fedora tomcat users file
+  template: src=tomcat-users.xml.j2 dest={{ fedora_base }}/conf/tomcat-users.xml owner=root group=fedora
+
+- name: Put in place the Fedora tomcat context file
+  template: src=fedora-production.j2 dest={{ fedora_base }}/conf/Catalina/localhost/fedora.xml owner=fedora group=fedora
+
+- name: Put in place the modeshape asset storage json configuration file
+  template: src=modeshape.json.j2 dest={{ fedora_home }}/etc/modeshape.json owner=fedora group=fedora
+
+- name: Put in place the Fedora tomcat environment variables file
+  template: src=fedora_env.j2 dest=/etc/sysconfig/fedora owner=root group=root

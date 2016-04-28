@@ -1,0 +1,22 @@
+## Tomcat Environment Variables ##
+
+# User account that will run the Tomcat server process
+TOMCAT_USER=fedora
+
+# Base directory of Java installation to be used with this Tomcat instance
+export JAVA_HOME=/usr/lib/jvm/java
+
+# Java options specific to the application running within Tomcat
+export JAVA_OPTS="{{ fedora_javaopts }}"
+
+# Path to the common Tomcat binaries and libraries shared by all Tomcat instances
+export CATALINA_HOME=/usr/local/tomcat7
+
+# Path to this Tomcat instance
+export CATALINA_BASE={{ fedora_base }}
+
+# Set the location of the Catalina PID file
+export CATALINA_PID=$CATALINA_BASE/work/catalina.pid
+
+# Set the location of the Tomcat process lock file
+LOCKFILE=/var/lock/subsys/solr
