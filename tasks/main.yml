@@ -9,6 +9,9 @@
 - name: Createh Fedora data directory
   file: path={{ fedora_home }}/data owner=fedora group=fedora state=directory
 
+- name: Create the Fedora tomcat context directory
+  file: path={{ fedora_base }}/conf/Catalina/localhost owner=fedora group=fedora state=directory
+
 - name: Put in place the Fedora WAR file in the webapps directory
   get_url: url={{ fedora_url }} dest={{ fedora_base }}/webapps/fcrepo.war force=no
 
