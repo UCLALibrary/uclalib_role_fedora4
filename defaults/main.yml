@@ -4,7 +4,10 @@
 fedora_version: 4.5.0
 
 # Define the URL to obtain the Fedora WAR file
+# This download URL links to the fedora WAR file with a number of other dependencies included (such as tomcat authentication)
 fedora_url: "https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-{{ fedora_version }}/fcrepo-webapp-plus-webac-{{ fedora_version }}.war"
+# This download URL links to the fedora WAR file containing a bare-bones configuraiton with no dependencies enabled
+# fedora_url: "https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-{{ fedora_version }}/fcrepo-webapp-{{ fedora_version }}.war"
 
 # Define location of Solr Tomcat installation directory
 fedora_base: /usr/local/fedora
