@@ -1,8 +1,18 @@
 # UCLALib Ansible Role: Fedora 4
 
-Creates a bare-bones installation/configuration of a Fedora 4 repository servers
+Deploy a bare-bones installation/configuration of a Fedora 4 repository server.
 
-This role is loosely based on the [Ansible Fedora 4 role created by the Digital Repository of Ireland ](https://github.com/Digital-Repository-of-Ireland/ansible-fedora4)
+This role is loosely based on the [Ansible Fedora 4 role created by the Digital Repository of Ireland ](https://github.com/Digital-Repository-of-Ireland/ansible-fedora4).
+
+___This role supports Fedora 4.5.X releases only.___
+
+Deployment documentation is for this version is available at [Deploying Fedora 4 Complete Guide](https://wiki.duraspace.org/x/e4RcB).
+
+Official GitHub repositories are:
+* https://github.com/fcrepo4-exts/fcrepo-webapp-plus
+* https://github.com/fcrepo4/fcrepo4
+
+The repository you chose depends on the Fedora features you want to enable.
 
 ## Dependencies
 
@@ -13,25 +23,25 @@ This role is loosely based on the [Ansible Fedora 4 role created by the Digital 
 
 ## Variables
 
-fedora_version - defines the version of Fedora to use (e.g. 4.0.0, 4.5.0, etc.)
+* `fedora_version` - defines the version of Fedora to use (e.g. 4.0.0, 4.5.0, etc.)
 
-fedora_url - defines the URL to obtain the Fedora WAR file
+* `fedora_url` - defines the URL to obtain the Fedora WAR file
 
-fedora_base - defines the location of Fedora Tomcat installation directory
+* `fedora_base` - defines the location of Fedora Tomcat installation directory
 
-fedora_home - defines the location of the Fedora home directory
+* `fedora_home` - defines the location of the Fedora home directory
 
-fedora_javaopts - defines the JVM options to use on Fedora start-up
+* `fedora_javaopts` - defines the JVM options to use on Fedora start-up
 
-fedora_admin_user - defines the Fedora admin username
+* `fedora_admin_user` - defines the Fedora admin username
 
-fedora_admin_password - defines the Fedora admin password
+* `fedora_admin_password` - defines the Fedora admin password
 
 ## Sample Variable Definition Formats
 
 The variable definitions should be placed in the playbook under the `vars` statement.
 
-If the variable definitions definied in `defaults` is sufficient, your play would like something like:
+If the variable definitions defined in `defaults` are sufficient, your play would look something like:
 
 ```ansible
 ---
