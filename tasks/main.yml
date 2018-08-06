@@ -1,5 +1,8 @@
 ---
 
+- name: Set environment variables for this project and environment
+  include_vars: "{{ project_name }}.{{ env_name }}.yml"
+
 - name: Create Fedora data directory
   file:
     path: "{{ fedora_data_dir }}"
