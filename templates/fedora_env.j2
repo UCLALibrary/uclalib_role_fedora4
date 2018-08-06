@@ -4,7 +4,7 @@
 TOMCAT_USER={{ fedora_tomcat_user }}
 
 # Java options specific for Fedora
-JAVA_OPTS="-Dfcrepo.home={{ fedora_home }} ${JAVA_OPTS}"
+JAVA_OPTS="-Dfcrepo.home={{ fedora_data_dir }} ${JAVA_OPTS}"
 JAVA_OPTS="-Dfcrepo.spring.configuration=file:{{ fedora_config_dir }}/fcrepo-config.xml ${JAVA_OPTS}"
 JAVA_OPTS="-Dfcrepo.modeshape.configuration=file:{{ fedora_config_dir }}/repository.json ${JAVA_OPTS}"
 JAVA_OPTS="-Dlogback.configurationFile={{ fedora_config_dir }}/logback.xml ${JAVA_OPTS}"
