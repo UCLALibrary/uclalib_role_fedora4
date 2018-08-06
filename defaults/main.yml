@@ -1,5 +1,12 @@
 ---
 
+# Defines project name this fedora instance is associated with
+# This should be defined in the play file or the inventory file
+project_name: ""
+
+# Defines the environment name (e.g. test, stage, prod) the fedora instance is assocaited with
+env_name: ""
+
 # Define version of Fedora to use
 fedora_version: 4.7.5
 
