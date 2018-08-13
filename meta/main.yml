@@ -1,0 +1,21 @@
+---
+
+dependencies:
+  - { role: uclalib_role_rhel7repos }
+  - { role: uclalib_role_epel }
+  - { role: uclalib_role_uclalibrepo }
+  - { role: uclalib_role_java, oracle_java_version: '1.8.0_181' }
+  - { role: uclalib_role_apache }
+  - { role: uclalib_role_tomcat }
+  - { role: uclalib_role_fedora4, fedora_version: '4.7.5' }
+
+galaxy_info:
+  author: Stephen Gurnick - https://github.com/sgurnick
+  description:
+  company: UCLA Library
+  license: reference LICENSE file
+  min_ansible_version: 2.4
+  platforms:
+  - name: EL
+    versions:
+    - 7
