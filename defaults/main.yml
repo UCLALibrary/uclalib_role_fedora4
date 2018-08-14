@@ -11,9 +11,7 @@ env_name: ""
 fedora_version: 4.7.5
 
 # Define the URL to obtain the Fedora WAR file
-# This download URL links to the fedora WAR file containing a bare-bones configuraiton with no dependencies enabled
-#fedora_url: "https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-{{ fedora_version }}/fcrepo-webapp-plus-{{ fedora_version }}.war"
-fedora_url: "https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-{{ fedora_version }}/fcrepo-webapp-plus-webac-{{ fedora_version }}.war"
+fedora_url: "https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-{{ fedora_version }}/fcrepo-webapp-{{ fedora_version }}.war"
 
 # Define location of Fedora installation directory
 # This is the tomcat app directory
