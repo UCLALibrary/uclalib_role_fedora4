@@ -1,12 +1,9 @@
 ---
 
 dependencies:
-  - { role: uclalib_role_rhel7repos }
-  - { role: uclalib_role_epel }
-  - { role: uclalib_role_uclalibrepo }
-  - { role: uclalib_role_java, oracle_java_version: '1.8.0_181' }
-  - { role: uclalib_role_apache }
-  - { role: uclalib_role_tomcat }
+  - src: git+https://github.com/UCLALibrary/uclalib_role_java.git
+  - src: git+https://github.com/UCLALibrary/uclalib_role_apache.git
+  - src: git+https://github.com/UCLALibrary/uclalib_role_tomcat.git
 
 galaxy_info:
   author: Stephen Gurnick - https://github.com/sgurnick
