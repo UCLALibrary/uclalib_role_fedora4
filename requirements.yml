@@ -12,4 +12,3 @@
 
 - src: git+https://github.com/UCLALibrary/uclalib_role_tomcat.git
 
-- src: git+https://github.com/UCLALibrary/uclalib_role_fedora4.git
