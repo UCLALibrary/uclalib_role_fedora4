@@ -1,7 +1,17 @@
 ---
 
+# NOTE: if you do not use a project vars file, the fedora variables
+# must be set in some other way, there are multiple options for doing this
+# but you'll need to use them, and they may not be as secure as using a
+# project vars file
+
+- name: Determine if optional project vars file exists
+  local_action: stat path="{{ project_name }}_{{ env_name }}.yml"
+  register: project_vars_file
+
 - name: Set environment variables for this project and environment
   include_vars: "{{ project_name }}_{{ env_name }}.yml"
+  when: project_vars_file.stat.exists
 
 - name: Create Fedora data directory
   file:
