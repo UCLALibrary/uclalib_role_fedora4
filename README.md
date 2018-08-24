@@ -17,8 +17,10 @@ Official GitHub repository:
 Please take note of the following assumptions:
 * the Fedora repository server uses Red Hat Enterprise Linux as the OS
 * a MySQL database server is available with the database created and user account/privileges established
-* all project-specific variables for this role should be defined in a __vars__ file with a name following the format of `projectname_envname.yml`
+* project-specific variables for this role can be defined in a __vars__ file with a name following the format of `projectname_envname.yml`
+    * an example vars file is available in `vars/exampleproj_test.yml`
     * this vars file will contain sensitive information and should be encrypted with ansible-vault
+    * NOTE: if you choose not to use the vars file for including the variable definitions, they should be defined in the playbook file 
 
 ## Role Variables
 
