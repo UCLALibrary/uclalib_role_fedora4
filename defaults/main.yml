@@ -47,3 +47,13 @@ fedora_admin_password: nimdAarodef!
 
 # Defines the URL to access the fedora server
 fedora_server_fqdn: "fedora.library.ucla.edu"
+
+# MySQL packages
+mysql_defaultrepo_version: "80"
+mysql_yumrepo_rpm: "https://dev.mysql.com/get/mysql{{ mysql_defaultrepo_version }}-community-release-el7-1.noarch.rpm"
+mysql_install_version: "5.6"
+mysql_installrepo_version: "{{ mysql_install_version.split('.')[0] }}{{ mysql_install_version.split('.')[1] }}"
+mysql_packages:
+  - mysql-community-client
+  - mysql-community-devel
+  - mysql-community-libs
