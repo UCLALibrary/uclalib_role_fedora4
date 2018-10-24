@@ -99,3 +99,11 @@
 
 - name: Install MySQL packages
   include_tasks: install_mysql_packages.yml
+
+- name: Put in place fedora specific my.cnf file
+  template:
+    src: fedora_my_cnf.j2
+    dest: /root/.my.fedora.cnf
+    owner: root
+    group: root
+    mode: 0600
