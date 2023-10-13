@@ -1,5 +1,10 @@
 ---
 
+- name: Install Updated MySQL GPG Key
+  rpm_key:
+    key: https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+    state: present
+
 - name: Install MySQL yum repository
   yum:
     name: "{{ mysql_yumrepo_rpm }}"
