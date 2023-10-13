@@ -16,7 +16,7 @@
 
 - name: Install MySQL yum repository
   yum:
-    name: "{{ mysql_yumrepo_rpm }}"
+    name: "/tmp/{{ mysql_yumrepo_rpm }}"
     state: present
 
 - name: Disable default MySQL repository
