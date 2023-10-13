@@ -50,7 +50,8 @@ fedora_server_fqdn: "fedora.library.ucla.edu"
 
 # MySQL packages
 mysql_defaultrepo_version: "80"
-mysql_yumrepo_rpm: "https://dev.mysql.com/get/mysql{{ mysql_defaultrepo_version }}-community-release-el{{ ansible_distribution_major_version }}-1.noarch.rpm"
+mysql_yumrepo_rpm: "mysql{{ mysql_defaultrepo_version }}-community-release-el{{ ansible_distribution_major_version }}-1.noarch.rpm"
+mysql_yumrepo_url: "https://dev.mysql.com/get/{{ mysql_yumrepo_rpm }}"
 mysql_install_version: "5.6"
 mysql_installrepo_version: "{{ mysql_install_version.split('.')[0] }}{{ mysql_install_version.split('.')[1] }}"
 mysql_packages:
