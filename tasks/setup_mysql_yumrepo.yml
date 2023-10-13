@@ -19,10 +19,19 @@
     name: "/tmp/{{ mysql_yumrepo_rpm }}"
     state: present
 
-- name: Disable default MySQL repository
+- name: Disable default MySQL repository (EL7)
   command: >
     yum-config-manager --disable mysql{{ mysql_defaultrepo_version }}-community
-  when: mysql_defaultrepo_version != mysql_installrepo_version
+  when:
+   - mysql_defaultrepo_version != mysql_installrepo_version
+   - ansible_distribution_major_version == 7
+
+- name: Disable default MySQL repository (EL8)
+  command: >
+    yum module disable mysql
+  when:
+   - mysql_defaultrepo_version != mysql_installrepo_version
+   - ansible_distribution_major_version == 8
 
 - name: Enable version-specific MySQL repository
   command: >
