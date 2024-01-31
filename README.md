@@ -6,7 +6,7 @@ Deploy a bare-bones installation/configuration of a Fedora 4 repository server.
 
 ___This role supports Fedora 4.7.X releases only.___
 
-Deployment documentation is for this version is available at [Deploying Fedora 4 Complete Guide](https://wiki.duraspace.org/x/PjdsBQ).
+Deployment documentation is for this version is available at [Deploying Fedora 4 Complete Guide](https://wiki.lyrasis.org/display/FEDORA475/Deploying+Fedora+4+Complete+Guide).
 
 Official GitHub repository:
 * https://github.com/fcrepo4-exts/fcrepo-webapp-plus
@@ -17,19 +17,11 @@ Official GitHub repository:
 Please take note of the following assumptions:
 * the Fedora repository server uses Red Hat Enterprise Linux as the OS
 * a MySQL database server is available with the database created and user account/privileges established
-* project-specific variables for this role can be defined in a __vars__ file with a name following the format of `projectname_envname.yml`
-    * an example vars file is available in `vars/exampleproj_test.yml`
-    * this vars file will contain sensitive information and should be encrypted with ansible-vault
-    * NOTE: if you choose not to use the vars file for including the variable definitions, they should be defined in the playbook file
+* project-specific variables for this role should be defined in a `host_vars` or `group_vars` file
 
 ## Role Variables
 
-Variables that need to be defined in the **play file** or the **host inventory file** - please note these should match the naming used for the vars file:
-* `project_name` - defines the name of the rails application project - there is no default value
-* `env_name` - defines the name of the deploy environment (e.g. test, stage, prod) - there is no default value
-* `fedora_version` - defines the version of Fedora to use (e.g. 4.0.0, 4.5.0, etc.)
-
-Variables with default values that **do not** need to be defined in the project vars file, but can be adjusted if necessary:
+Variables with default values that **do not** need to be defined in the project-specific vars, but can be adjusted if necessary:
 * `fedora_url` - defines the URL to obtain the Fedora WAR file
 * `fedora_base_dir` - defines the location of Fedora Tomcat installation directory
 * `fedora_tomcat_user` - defines the tomcat user fedora will run as
@@ -39,7 +31,8 @@ Variables with default values that **do not** need to be defined in the project 
 * `fedora_config_dir` - defines the path to the external fedora configuration directory
 * `fedora_log_dir` - defines the path to the fedora log directory
 
-Variables that **do** need to be defined in the project vars file:
+Project-specific variables that **do** need to be defined in `host_vars` or `group_vars`:
+* `fedora_version` - defines the version of Fedora to use (e.g. 4.0.0, 4.5.0, etc.)
 * `fedora_db_user` - defines the user fedora will use to connect to the database
 * `fedora_db_password` - defines the password fedora will use to connect to the database
 * `fedora_db_host` - defines the FQDN of the database server
@@ -48,8 +41,6 @@ Variables that **do** need to be defined in the project vars file:
 * `fedora_admin_user` - defines the Fedora admin username
 * `fedora_admin_password` - defines the Fedora admin password
 * `fedora_server_fqdn` - defines the fully qualified domain name of the Fedora repository server
-
-An example vars file is available as a part of this role, named `exampleproj_test.yml`
 
 ## Fedora Download URL Note
 
@@ -64,6 +55,7 @@ If you are affiliated with UCLA, you have the option of overriding this default 
 Versions of Fedora available via the UCLA URL are:
 
 * `4.7.5`
+* `4.7.6`
 
 ## Dependencies
 
