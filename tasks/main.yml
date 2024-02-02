@@ -29,10 +29,11 @@
 
 - name: Put in place the Fedora tomcat environment variables file
   template:
-    src: "fedora_env.j2"
-    dest: "/etc/sysconfig/fedora"
-    owner: "root"
-    group: "root"
+    src: "fedora_setenv.j2"
+    dest: "{{ fedora_base_dir }}/bin/setenv.sh"
+    owner: "{{ fedora_tomcat_user }}"
+    group: "{{ fedora_tomcat_user }}"
+    mode: "0750"
 
 - name: Create the Fedora external configuration directory
   file:
