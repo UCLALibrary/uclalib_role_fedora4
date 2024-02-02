@@ -19,7 +19,7 @@ JAVA_OPTS="-XX:MaxMetaspaceSize=512m ${JAVA_OPTS}"
 export JAVA_OPTS
 
 # Path to the common Tomcat binaries and libraries shared by all Tomcat instances
-export CATALINA_HOME=/usr/local/tomcat7
+export CATALINA_HOME=/usr/local/{{ fedora_tomcat_major_version }}
 
 # Path to this Fedora Tomcat instance
 export CATALINA_BASE={{ fedora_base_dir }}
