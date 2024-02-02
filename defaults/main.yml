@@ -17,6 +17,9 @@ fedora_data_dir: "/opt/fedora-data"
 # Define tomcat user Fedora will run as
 fedora_tomcat_user: "fedora"
 
+# Define the major version of tomcat installed (e.g. 8, 9, etc.)
+fedora_tomcat_major_version: "9"
+
 # Define min/max memory allocation
 fedora_min_mem: "2048m"
 Fedora_max_mem: "2048m"
