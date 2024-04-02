@@ -1,0 +1,13 @@
+# This file contains ignores rule violations for ansible-lint
+defaults/main.yml var-naming[pattern]
+meta/main.yml yaml[indentation]
+requirements.yml yaml[empty-lines]
+tasks/install_mysql_packages.yml fqcn[action-core]
+tasks/main.yml fqcn[action-core]
+tasks/main.yml risky-file-permissions
+tasks/main.yml yaml[octal-values]
+tasks/main.yml yaml[truthy]
+tasks/setup_mysql_yumrepo.yml command-instead-of-module
+tasks/setup_mysql_yumrepo.yml fqcn[action-core]
+tasks/setup_mysql_yumrepo.yml no-changed-when
+tasks/setup_mysql_yumrepo.yml yaml[indentation]
