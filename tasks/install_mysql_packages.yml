@@ -3,3 +3,4 @@
   yum:
     name: "{{ mysql_packages }}"
     state: present
+    disable_excludes: "all"
